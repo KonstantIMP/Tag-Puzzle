@@ -17,7 +17,7 @@
 #include <string>
 
 tag_puzzle::tag_puzzle() {
-    if(!(num_font.loadFromFile("res/DejaVuSansMono.ttf"))) exit(0);
+    if(!(num_font.loadFromFile("res/DejaVuSansMono.ttf")) && !(num_font.loadFromFile("/usr/share/tag_game/res/DejaVuSansMono.ttf"))) exit(0);
 }
 
 tag_puzzle::~tag_puzzle() {}

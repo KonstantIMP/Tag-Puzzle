@@ -1,0 +1,29 @@
+[Desktop Entry]
+
+Version=1.0
+
+Encoding=UTF-8
+
+Type=Application
+
+Categories=Game
+
+Exec=/usr/bin/tag_puzzle
+
+Terminal=false
+
+Icon=/usr/share/tag_game/res/icon.svg
+
+StartupNotify=true
+
+Name=Tag Puzzle
+
+Name[ru]=Пятнашки
+
+Comment=A simple Tag game, written on C++ & SFML
+
+Comment[ru]=Простые Пятнашки, написанные на C++ и SFML
+
+NoDisplay=false
+
+Hidden=false

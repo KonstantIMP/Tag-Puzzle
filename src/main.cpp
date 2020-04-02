@@ -24,14 +24,14 @@ int main()
     sf::RenderWindow main_win(sf::VideoMode(600, 600), "Tag Puzzle");
 
     sf::Image mw_icon;
-    if(!(mw_icon.loadFromFile("res/tag_icon.png"))) exit(1);
+    if(!(mw_icon.loadFromFile("res/tag_icon.png")) && !(mw_icon.loadFromFile("/usr/share/tag_game/res/tag_icon.png"))) exit(1);
 
     main_win.setIcon(mw_icon.getSize().x, mw_icon.getSize().y, mw_icon.getPixelsPtr());
 
     sf::Event mw_event;
 
     sf::Font menu_font;
-    if(!(menu_font.loadFromFile("res/DejaVuSansMono.ttf"))) exit(1);
+    if(!(menu_font.loadFromFile("res/DejaVuSansMono.ttf")) && !(menu_font.loadFromFile("/usr/share/tag_game/res/DejaVuSansMono.ttf"))) exit(1);
 
     sf::Text menu_msg;
     menu_msg.setFont(menu_font);
@@ -41,7 +41,7 @@ int main()
     menu_msg.setFillColor(sf::Color(255, 186, 0));
 
     sf::Music mw_music;
-    if(!(mw_music.openFromFile("res/Wallpaper.ogg"))) exit(4);
+    if(!(mw_music.openFromFile("res/Wallpaper.ogg")) && !(mw_music.openFromFile("/usr/share/tag_game/res/Wallpaper.ogg"))) exit(4);
     mw_music.setLoop(true);
     mw_music.play();
 
