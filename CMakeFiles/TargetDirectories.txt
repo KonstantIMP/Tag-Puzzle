@@ -1,0 +1,8 @@
+/home/konstantin/Projects/Tag-Puzzle/CMakeFiles/install/strip.dir
+/home/konstantin/Projects/Tag-Puzzle/CMakeFiles/install/local.dir
+/home/konstantin/Projects/Tag-Puzzle/CMakeFiles/install.dir
+/home/konstantin/Projects/Tag-Puzzle/CMakeFiles/list_install_components.dir
+/home/konstantin/Projects/Tag-Puzzle/CMakeFiles/uninstall.dir
+/home/konstantin/Projects/Tag-Puzzle/CMakeFiles/tag_puzzle.dir
+/home/konstantin/Projects/Tag-Puzzle/CMakeFiles/edit_cache.dir
+/home/konstantin/Projects/Tag-Puzzle/CMakeFiles/rebuild_cache.dir

@@ -33,4 +33,4 @@ install(TARGETS tag_puzzle DESTINATION /usr/bin)
 
 install(FILES ${PROJECT_SOURCE_DIR}/res/DejaVuSansMono.ttf ${PROJECT_SOURCE_DIR}/res/tag_icon.png ${PROJECT_SOURCE_DIR}/res/icon.svg ${PROJECT_SOURCE_DIR}/res/Wallpaper.ogg DESTINATION /usr/share/tag_game/res/)
 
-install(FILES ${PROJECT_SOURCE_DIR}/res/tag_puzzle.desktop DESTINATION /usr/share/applications/tag_puzzle.desktop)
+install(FILES ${PROJECT_SOURCE_DIR}/res/tag_puzzle.desktop DESTINATION /usr/share/applications)
