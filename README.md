@@ -1,5 +1,9 @@
 # Tag-Puzzle
 
+    A simple Tag game, written on C++ & SFML
+    
+    
+
 # Music 
 Wallpaper by Kevin MacLeod
 
