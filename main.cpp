@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include "tag_puzzle.hpp"
 
@@ -20,10 +21,15 @@ int main()
 
     sf::Text menu_msg;
     menu_msg.setFont(menu_font);
-    menu_msg.setScale(sf::Vector2f(0.45, 0.45));
-    menu_msg.setString("ESC - exit / Arrows - step / F2 - new game");
+    menu_msg.setScale(sf::Vector2f(0.4, 0.4));
+    menu_msg.setString("ESC - exit / F2 - new game / F3 - Sound / Arrows - step        by KonstantIMP");
     menu_msg.setPosition(sf::Vector2f(24, 5));
     menu_msg.setFillColor(sf::Color(255, 186, 0));
+
+    sf::Music mw_music;
+    if(!(mw_music.openFromFile("Wallpaper.ogg"))) exit(4);
+    mw_music.setLoop(true);
+    mw_music.play();
 
     tag_puzzle game;
     game.field_init();
@@ -42,6 +48,11 @@ int main()
                 if(mw_event.key.code == sf::Keyboard::Right) game.move_bit(RIGHT);
 
                 if(mw_event.key.code == sf::Keyboard::F2) game.field_init();
+
+                if(mw_event.key.code == sf::Keyboard::F3){
+                    if(mw_music.getStatus() == sf::Music::Playing) mw_music.pause();
+                    else mw_music.play();
+                }
             }
         }
 
