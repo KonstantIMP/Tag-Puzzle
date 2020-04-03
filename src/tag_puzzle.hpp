@@ -31,8 +31,11 @@ public:
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
+    bool is_win();
 private:
     sf::Font num_font;
+
+    sf::Clock timer;
 
     int bits[16];
 

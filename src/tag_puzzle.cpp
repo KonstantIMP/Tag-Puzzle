@@ -29,11 +29,15 @@ void tag_puzzle::field_init() {
 
     bits[null_index] = 0;
 
+    timer.restart();
+
     srand(time(0));
     for(int i{0}; i < 500; i++) this->move_bit((Direction)(rand() % 4));
 }
 
 void tag_puzzle::move_bit(Direction step) {
+    if(timer.getElapsedTime().asSeconds() > 1) if(is_win()) return;
+
     int row = null_index / 4;
     int collumn = null_index % 4;
 
@@ -106,4 +110,44 @@ void tag_puzzle::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         target.draw(bit_num, states);
         target.draw(bit, states);
     }
+
+    for(int i{0}; i < 15; i++){
+        if(bits[i] != i + 1) return;
+    }
+
+    sf::RectangleShape win_place;
+    win_place.setSize(sf::Vector2f(300, 200));
+    win_place.setFillColor(sf::Color::Red);
+    win_place.setPosition(sf::Vector2f(130, 175));
+    win_place.setOutlineThickness(5.f);
+    win_place.setOutlineColor(sf::Color::White);
+
+    target.draw(win_place, states);
+
+    bit_num.setString("You WIN!");
+    bit_num.setCharacterSize(48);
+    bit_num.setFillColor(sf::Color::White);
+    bit_num.setPosition(sf::Vector2f(170, 200));
+
+    target.draw(bit_num, states);
+
+    bit_num.setString(std::to_string(((int)(((int)timer.getElapsedTime().asSeconds()) / 60))) + " : " + std::to_string(((int)(((int)timer.getElapsedTime().asSeconds()) % 60))));
+    bit_num.setCharacterSize(48);
+    bit_num.setPosition(sf::Vector2f(208, 260));
+
+    target.draw(bit_num, states);
+
+    bit_num.setString("Press F2 to restart & ESC to exit");
+    bit_num.setCharacterSize(14);
+    bit_num.setPosition(sf::Vector2f(150, 330));
+
+    target.draw(bit_num, states);
+}
+
+bool tag_puzzle::is_win() {
+    for(int i{0}; i < 15; i++){
+        if(bits[i] != i + 1) return false;
+    }
+
+    return true;
 }
